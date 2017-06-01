@@ -73,7 +73,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li {{ (App::isLocale('si') ? 'class=active' : '') }}><a href="/locale/si">සිංහල</a></li>
-                <!--<li {{ (App::isLocale('ta') ? 'class=active' : '') }}><a href="/locale/ta">தமிழ்</a></li>-->
+                <li {{ (App::isLocale('ta') ? 'class=active' : '') }}><a href="/locale/ta">தமிழ்</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -95,7 +95,7 @@
                 <div class="footer-banner">
                     <h3 class="footer-title">Disclaimer</h3>
                     <p>{{ __('home.footer_line_3')}}</p>
-                    <p>{{ __('home.footer_line_4')}}</p>
+                    <p>{!! __('home.footer_line_4') !!}</p>
                 </div>
             </div>
         </div>
