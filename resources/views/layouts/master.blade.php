@@ -17,12 +17,12 @@
     <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,700" rel="stylesheet">
 
     <!-- Loading Flat UI -->
-    <link href="/public/css/flat-ui.min.css" rel="stylesheet">
+    <link href="/css/flat-ui.min.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
-    <script src="/public/js/vendor/html5shiv.js"></script>
-    <script src="/public/js/vendor/respond.min.js"></script>
+    <script src="/js/vendor/html5shiv.js"></script>
+    <script src="/js/vendor/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -72,8 +72,16 @@
                 <li {{ (Request::is('twitter-feed*') ? 'class=active' : '') }}><a href="/twitter-feed">#FloodSL Twitter Feed</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li {{ (App::isLocale('si') ? 'class=active' : '') }}><a href="/locale/si">සිංහල</a></li>
-                <li {{ (App::isLocale('ta') ? 'class=active' : '') }}><a href="/locale/ta">தமிழ்</a></li>
+                <li>
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ (App::isLocale('si') ? 'සිංහල' : 'தமிழ்') }} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        @if(App::isLocale('si'))
+                        <li><a href="/locale/ta">தமிழ்</a></li>
+                        @else
+                        <li><a href="/locale/si">සිංහල</a></li>
+                        @endif
+                    </ul>
+                </li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -104,12 +112,12 @@
 
 <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
 
-<script src="/public/js/vendor/jquery.min.js"></script>
+<script src="/js/vendor/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/public/js/vendor/video.js"></script>
-<script src="/public/js/flat-ui.min.js"></script>
-<script src="/public/js/donations.js"></script>
+<script src="/js/vendor/video.js"></script>
+<script src="/js/flat-ui.min.js"></script>
+<script src="/js/donations.js"></script>
 
 </body>
 </html>
